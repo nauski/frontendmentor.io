@@ -12,7 +12,10 @@ body {
 .container {
     display: flex;
     width: 60%;
-    margin: 20% auto;
+    margin-top: 30%;
+    margin-bottom: 20%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 20px;
 }
 
