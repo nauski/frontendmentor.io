@@ -6,7 +6,9 @@
 }
 
 body {
-    background-image: url("/profile-card-component-main/images/bg-pattern-bottom.svg");
+    background-image: url("/profile-card-component-main/images/bg-pattern-top.svg"), url("/profile-card-component-main/images/bg-pattern-bottom.svg");
+    background-position: left -25% top -90%, right -25% bottom -80%;
+    background-repeat: no-repeat, no-repeat;
     background-color: #19A1AD;
 }
 
