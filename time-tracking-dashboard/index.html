@@ -18,6 +18,64 @@
 
 <body>
 
+    <script>
+        fetch('data.json') //file json objects
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                appendData(data);
+            })
+            .catch(function(err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+
+            //work
+            var workcurrenthrs = document.getElementById("workcurrenthrs");
+            var workprevioushrs = document.getElementById("workprevioushrs");
+
+            workcurrenthrs.innerHTML = data[0].timeframes.weekly.current + 'hrs';
+            workprevioushrs.innerHTML = 'Last week - ' + data[0].timeframes.weekly.previous + 'hrs';
+
+            //play
+            var playcurrenthrs = document.getElementById("playcurrenthrs");
+            var playprevioushrs = document.getElementById("playprevioushrs");
+
+            playcurrenthrs.innerHTML = data[1].timeframes.weekly.current + 'hrs';
+            playprevioushrs.innerHTML = 'Last week - ' + data[1].timeframes.weekly.previous + 'hrs';
+
+            //study
+            var studycurrenthrs = document.getElementById("studycurrenthrs");
+            var studyprevioushrs = document.getElementById("studyprevioushrs");
+
+            studycurrenthrs.innerHTML = data[2].timeframes.weekly.current + 'hrs';
+            studyprevioushrs.innerHTML = 'Last week - ' + data[2].timeframes.weekly.previous + 'hrs';
+
+            //exercise
+            var exercisecurrenthrs = document.getElementById("exercisecurrenthrs");
+            var exerciseprevioushrs = document.getElementById("exerciseprevioushrs");
+
+            exercisecurrenthrs.innerHTML = data[3].timeframes.weekly.current + 'hrs';
+            exerciseprevioushrs.innerHTML = 'Last week - ' + data[3].timeframes.weekly.previous + 'hrs';
+
+            //social
+            var socialcurrenthrs = document.getElementById("socialcurrenthrs");
+            var socialprevioushrs = document.getElementById("socialprevioushrs");
+
+            socialcurrenthrs.innerHTML = data[4].timeframes.weekly.current + 'hrs';
+            socialprevioushrs.innerHTML = 'Last week - ' + data[4].timeframes.weekly.previous + 'hrs';
+
+            //selfcare
+            var selfcarecurrenthrs = document.getElementById("selfcarecurrenthrs");
+            var selfcareprevioushrs = document.getElementById("selfcareprevioushrs");
+
+            selfcarecurrenthrs.innerHTML = data[5].timeframes.weekly.current + 'hrs';
+            selfcareprevioushrs.innerHTML = 'Last week - ' + data[5].timeframes.weekly.previous + 'hrs';
+        }
+    </script>
+
     <section class="main">
         <div class="main__card main__card-tall">
             <div class="main__card-tall__header">
@@ -50,11 +108,10 @@
                     <span class="main__card__footer__type_container__type">Work</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    32hrs
+                <h2 id="workcurrenthrs">
+
                 </h2>
-                <span>
-                  Last Week - 36hrs
+                <span id="workprevioushrs">
                 </span>
             </div>
         </div>
@@ -66,11 +123,9 @@
                     <span class="main__card__footer__type_container__type">Play</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    10hrs
+                <h2 id="playcurrenthrs">
                 </h2>
-                <span>
-                Last Week - 8hrs
+                <span id="playprevioushrs">
               </span>
             </div>
         </div>
@@ -79,14 +134,12 @@
             <img src="images/icon-study.svg" alt="">
             <div class="main__card main__card__footer">
                 <div class="main__card__footer__type_container">
-                    <span class="main__card__footer__type_container__type">Play</span>
+                    <span class="main__card__footer__type_container__type">Study</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    4hrs
+                <h2 id="studycurrenthrs">
                 </h2>
-                <span>
-              Last Week - 7hrs
+                <span id="studyprevioushrs">
             </span>
             </div>
         </div>
@@ -98,11 +151,9 @@
                     <span class="main__card__footer__type_container__type">Exercise</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    4hrs
+                <h2 id="exercisecurrenthrs">
                 </h2>
-                <span>
-            Last Week - 5hrs
+                <span id="exerciseprevioushrs">
           </span>
             </div>
         </div>
@@ -114,11 +165,9 @@
                     <span class="main__card__footer__type_container__type">Social</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    2hrs
+                <h2 id="socialcurrenthrs">
                 </h2>
-                <span>
-          Last Week - 2hrs
+                <span id="socialprevioushrs">
         </span>
             </div>
         </div>
@@ -130,11 +179,9 @@
                     <span class="main__card__footer__type_container__type">Self Care</span>
                     <div class="main__card__footer__type_container__menu">...</div>
                 </div>
-                <h2>
-                    5hrs
+                <h2 id="selfcarecurrenthrs">
                 </h2>
-                <span>
-        Last Week - 10hrs
+                <span id="selfcareprevioushrs">
       </span>
             </div>
         </div>
